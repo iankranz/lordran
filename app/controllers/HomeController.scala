@@ -3,6 +3,8 @@ package controllers
 import javax.inject._
 import play.api._
 import play.api.mvc._
+import slick.jdbc.JdbcBackend.Database
+import slick.lifted.TableQuery
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
@@ -19,6 +21,8 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
    * a path of `/`.
    */
   def index() = Action { implicit request: Request[AnyContent] =>
+    val db = Database.forConfig("slick.dbs.default.db")
+    val merchants = TableQuery[slick.Merchants]
     Ok(views.html.index())
   }
 }
