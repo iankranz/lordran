@@ -11,4 +11,5 @@ Lordran is a Play Framework web application written in Scala. You can run the ap
 - Install Java and sbt as instructed in the Play [Documentation](https://www.playframework.com/documentation/2.8.x/Requirements)
 - Install Postgres and configure a local database for the application to use
 - Create a `.env` file where you specify environment variables `DB_URL`, `DB_USER`, and `DB_PASSWORD`
+- If you've named your database `lordran`, then your `DB_URL` should be `jdbc:postgresql://localhost:5432/lordran` when running locally
 - Run the application using `sbt run`
